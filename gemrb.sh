@@ -50,6 +50,12 @@ _EOF_
     chmod u+x "$romdir/ports/BaldursGate1.sh"
     chown $user:$user "$romdir/ports/BaldursGate1.sh"
 
+
+mkRomDir "gemrb"
+#best way to make subdirectories?
+#mkdir "$romdir/gemrb/baldurs1/"
+#mkdir "$romdir/gemrb/planescape/"	
+#mkdir "$romdir/gemrb/.cache/"
 	#create Baldurs Gate 1 configuration
 	
 		#better to use iniConfig iniSet ????
@@ -73,7 +79,7 @@ VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/bg1/
+GamePath=/home/pi/retropie/roms/gemrb/baldurs1/
 CD1=/home/pi/retropie/roms/gemrb/bg1/
 CachePath=/home/pi/retropie/roms/gemrb/.cache/
 _EOF_
@@ -97,7 +103,7 @@ GUIEnhancements = 15
 DrawFPS=1
 #FogOfWar=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/pst/
+GamePath=/home/pi/retropie/roms/gemrb/planescape/
 CD1=/home/pi/retropie/roms/gemrb/pst/data/
 CachePath=/home/pi/retropie/roms/gemrb/.cache/
 _EOF_
