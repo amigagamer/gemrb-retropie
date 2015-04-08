@@ -48,6 +48,17 @@ _EOF_
 /opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/bg2.cfg"
 _EOF_
 
+   cat > "$romdir/ports/Icewind1.sh" << _EOF_
+#!/bin/bash
+/opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/iwd1.cfg"
+_EOF_
+
+   cat > "$romdir/ports/Icewind2.sh" << _EOF_
+#!/bin/bash
+/opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/iwd2.cfg"
+_EOF_
+
+
  cat > "$romdir/ports/Planescape.sh" << _EOF_
 #!/bin/bash
 /opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/planescape.cfg"
@@ -57,10 +68,12 @@ _EOF_
     # Set startup script permissions
     chmod u+x "$romdir/ports/BaldursGate1.sh"
     chown $user:$user "$romdir/ports/BaldursGate1.sh"
-
 	chmod u+x "$romdir/ports/BaldursGate2.sh"
     chown $user:$user "$romdir/ports/BaldursGate2.sh"
-	
+	chmod u+x "$romdir/ports/Icewind1.sh"
+    chown $user:$user "$romdir/ports/Icewind1.sh"
+	chmod u+x "$romdir/ports/Icewind2.sh"
+    chown $user:$user "$romdir/ports/Icewind2.sh"
 	chmod u+x "$romdir/ports/Planescape.sh"
     chown $user:$user "$romdir/ports/Planescape.sh"
 	
@@ -68,6 +81,8 @@ _EOF_
 	mkRomDir "gemrb"
 	mkRomDir "gemrb/baldurs1"
 	mkRomDir "gemrb/baldurs2"
+	mkRomDir "gemrb/icewind1"
+	mkRomDir "gemrb/icewind2"
 	mkRomDir "gemrb/planescape"	
 	mkRomDir "$gemrb/cache"
 	mkUserDir "$configdir/gemrb"
@@ -123,7 +138,55 @@ CD1=/home/pi/retropie/roms/gemrb/baldurs2/data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
-	#create Planescape configuration
+#create Icewind 1 configuration
+   cat > "$configdir/gemrb/iwd1.cfg" << _EOF_
+GameType=how
+GameName=Icewind Dale 1
+Width=640
+Height=480
+Bpp=32
+Fullscreen=0
+TooltipDelay=500
+AudioDriver = openal
+VolumeAmbients = 100
+VolumeMovie = 100
+VolumeMusic = 100
+VolumeSFX = 100
+VolumeVoices = 100
+GUIEnhancements = 15
+DrawFPS=1
+CaseSensitive=1
+GamePath=/home/pi/retropie/roms/gemrb/icewind1/
+CD1=/home/pi/retropie/roms/gemrb/icewind1/data/
+CachePath=/home/pi/retropie/roms/gemrb/cache/
+_EOF_
+
+
+	#create Icewind2 configuration
+    cat > "$configdir/gemrb/iwd2.cfg" << _EOF_
+GameType=iwd2
+GameName=Icewind Dale 2
+Width=800
+Height=600
+Bpp=32
+Fullscreen=0
+TooltipDelay=500
+AudioDriver = openal
+VolumeAmbients = 100
+VolumeMovie = 100
+VolumeMusic = 100
+VolumeSFX = 100
+VolumeVoices = 100
+GUIEnhancements = 15
+DrawFPS=1
+#FogOfWar=1
+CaseSensitive=1
+GamePath=/home/pi/retropie/roms/gemrb/icewind2/
+CD1=/home/pi/retropie/roms/gemrb/icewind2/data/
+CachePath=/home/pi/retropie/roms/gemrb/cache/
+_EOF_
+
+#create Planescape configuration
     cat > "$configdir/gemrb/pst.cfg" << _EOF_
 GameType=pst
 GameName=Planescape Torment
