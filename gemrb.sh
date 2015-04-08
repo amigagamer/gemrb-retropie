@@ -25,11 +25,14 @@ function build_gemrb() {
     pushd build
     cmake .. -DPREFIX="$md_inst" -DFREETYPE_INCLUDE_DIRS=/usr/include/freetype2/
     make -j 4
-  #  popd
+    popd
 }
 
 function install_gemrb() {
-    make install
+	pushd build
+	sleep 20
+	make install
+	sleep 20
 }
 
 function configure_gemrb() {
@@ -56,6 +59,8 @@ mkRomDir "gemrb"
 #mkdir "$romdir/gemrb/baldurs1/"
 #mkdir "$romdir/gemrb/planescape/"	
 #mkdir "$romdir/gemrb/.cache/"
+mkUserDir "$configdir/gemrb"
+
 	#create Baldurs Gate 1 configuration
 	
 		#better to use iniConfig iniSet ????
