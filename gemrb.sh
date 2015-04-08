@@ -43,6 +43,11 @@ function configure_gemrb() {
 /opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/bg1.cfg"
 _EOF_
 
+    cat > "$romdir/ports/BaldursGate2.sh" << _EOF_
+#!/bin/bash
+/opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/bg2.cfg"
+_EOF_
+
  cat > "$romdir/ports/Planescape.sh" << _EOF_
 #!/bin/bash
 /opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/planescape.cfg"
@@ -53,15 +58,19 @@ _EOF_
     chmod u+x "$romdir/ports/BaldursGate1.sh"
     chown $user:$user "$romdir/ports/BaldursGate1.sh"
 
+	chmod u+x "$romdir/ports/BaldursGate2.sh"
+    chown $user:$user "$romdir/ports/BaldursGate2.sh"
+	
 	chmod u+x "$romdir/ports/Planescape.sh"
     chown $user:$user "$romdir/ports/Planescape.sh"
 	
 
-mkRomDir "gemrb"
-mkRomDir "gemrb/baldurs1"
-mkRomDir "gemrb/planescape"	
-mkRomDir "$gemrb/cache"
-mkUserDir "$configdir/gemrb"
+	mkRomDir "gemrb"
+	mkRomDir "gemrb/baldurs1"
+	mkRomDir "gemrb/baldurs2"
+	mkRomDir "gemrb/planescape"	
+	mkRomDir "$gemrb/cache"
+	mkUserDir "$configdir/gemrb"
 
 	#create Baldurs Gate 1 configuration
 	
@@ -88,6 +97,29 @@ DrawFPS=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/baldurs1/
 CD1=/home/pi/retropie/roms/gemrb/baldurs1/
+CachePath=/home/pi/retropie/roms/gemrb/cache/
+_EOF_
+
+	#create BG2 configuration (from planescape info)
+   cat > "$configdir/gemrb/bg2.cfg" << _EOF_
+GameType=bg2
+GameName=Baldur's Gate 2
+Width=640
+Height=480
+Bpp=32
+Fullscreen=0
+TooltipDelay=500
+AudioDriver = openal
+VolumeAmbients = 100
+VolumeMovie = 100
+VolumeMusic = 100
+VolumeSFX = 100
+VolumeVoices = 100
+GUIEnhancements = 15
+DrawFPS=1
+CaseSensitive=1
+GamePath=/home/pi/retropie/roms/gemrb/baldurs2/
+CD1=/home/pi/retropie/roms/gemrb/baldurs2/data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
