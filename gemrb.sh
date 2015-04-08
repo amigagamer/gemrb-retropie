@@ -87,7 +87,7 @@ GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/baldurs1/
-CD1=/home/pi/retropie/roms/gemrb/bg1/
+CD1=/home/pi/retropie/roms/gemrb/baldurs1/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
@@ -111,7 +111,7 @@ DrawFPS=1
 #FogOfWar=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/planescape/
-CD1=/home/pi/retropie/roms/gemrb/pst/data/
+CD1=/home/pi/retropie/roms/gemrb/planescape/data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 	 
