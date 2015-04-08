@@ -53,12 +53,14 @@ _EOF_
     chmod u+x "$romdir/ports/BaldursGate1.sh"
     chown $user:$user "$romdir/ports/BaldursGate1.sh"
 
+	chmod u+x "$romdir/ports/Planescape.sh"
+    chown $user:$user "$romdir/ports/Planescape.sh"
+	
 
 mkRomDir "gemrb"
-#best way to make subdirectories?
-#mkdir "$romdir/gemrb/baldurs1/"
-#mkdir "$romdir/gemrb/planescape/"	
-#mkdir "$romdir/gemrb/.cache/"
+mkRomDir "gemrb/baldurs1"
+mkRomDir "gemrb/planescape"	
+mkRomDir "$gemrb/cache"
 mkUserDir "$configdir/gemrb"
 
 	#create Baldurs Gate 1 configuration
@@ -86,7 +88,7 @@ DrawFPS=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/baldurs1/
 CD1=/home/pi/retropie/roms/gemrb/bg1/
-CachePath=/home/pi/retropie/roms/gemrb/.cache/
+CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
 	#create Planescape configuration
@@ -110,7 +112,7 @@ DrawFPS=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/planescape/
 CD1=/home/pi/retropie/roms/gemrb/pst/data/
-CachePath=/home/pi/retropie/roms/gemrb/.cache/
+CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 	 
     
