@@ -157,7 +157,9 @@ GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/icewind1/
-CD1=/home/pi/retropie/roms/gemrb/icewind1/data/
+CD1=/home/pi/retropie/roms/gemrb/icewind1/Data/
+CD2=/home/pi/retropie/roms/gemrb/icewind1/CD2/Data/
+CD3=/home/pi/retropie/roms/gemrb/icewind1/CD3/Data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
