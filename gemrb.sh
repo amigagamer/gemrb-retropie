@@ -77,23 +77,18 @@ _EOF_
 	chmod u+x "$romdir/ports/Planescape.sh"
     chown $user:$user "$romdir/ports/Planescape.sh"
 	
-
 	mkRomDir "gemrb"
 	mkRomDir "gemrb/baldurs1"
 	mkRomDir "gemrb/baldurs2"
 	mkRomDir "gemrb/icewind1"
 	mkRomDir "gemrb/icewind2"
 	mkRomDir "gemrb/planescape"	
-	mkRomDir "$gemrb/cache"
+	mkRomDir "gemrb/cache"
 	mkUserDir "$configdir/gemrb"
 
 	cp $md_inst/etc/gemrb/GemRB.cfg.sample $configdir/gemrb
-#create Baldurs Gate 1 configuration
 	
-	#better to use iniConfig iniSet ????
-	#iniConfig "=" "" "$configdir/gemrb/bg1.cfg"
-	#iniSet "x" "y"
-	
+#create Baldurs Gate 1 configuration	
     cat > "$configdir/gemrb/bg1.cfg" << _EOF_
 GameType=bg1
 GameName=Baldur's Gate 1
@@ -111,7 +106,7 @@ CD1=/home/pi/retropie/roms/gemrb/baldurs1/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
-#create BG2 configuration (from planescape info)
+#create Baldurs Gate 2 configuration
    cat > "$configdir/gemrb/bg2.cfg" << _EOF_
 GameType=bg2
 GameName=Baldur's Gate 2
@@ -149,8 +144,7 @@ CD3=/home/pi/retropie/roms/gemrb/icewind1/CD3/Data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
-
-	#create Icewind2 configuration
+#create Icewind2 configuration
     cat > "$configdir/gemrb/iwd2.cfg" << _EOF_
 GameType=iwd2
 GameName=Icewind Dale 2
@@ -185,8 +179,5 @@ GamePath=/home/pi/retropie/roms/gemrb/planescape/
 CD1=/home/pi/retropie/roms/gemrb/planescape/data/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
-	 
-    
-    # Add gemrb to emulationstation  TODO
-    #setESSystem 'Ports' 'ports' '~/RetroPie/roms/ports' '.sh .SH' '%ROM%' 'pc' 'ports'
-}
+	
+}	
