@@ -78,7 +78,7 @@ _EOF_
     chown $user:$user "$romdir/ports/Planescape.sh"
 	
 
-#	mkRomDir "gemrb"
+	mkRomDir "gemrb"
 	mkRomDir "gemrb/baldurs1"
 	mkRomDir "gemrb/baldurs2"
 	mkRomDir "gemrb/icewind1"
