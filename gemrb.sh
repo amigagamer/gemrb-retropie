@@ -37,7 +37,7 @@ function install_gemrb() {
 
 function configure_gemrb() {
   
-    # Create startup script
+# Create startup scripts
     cat > "$romdir/ports/BaldursGate1.sh" << _EOF_
 #!/bin/bash
 /opt/retropie/supplementary/runcommand/runcommand.sh 0  "/opt/retropie/ports/gemrb/bin/gemrb -C /opt/retropie/configs/gemrb/bg1.cfg"
@@ -78,7 +78,7 @@ _EOF_
     chown $user:$user "$romdir/ports/Planescape.sh"
 	
 
-	mkRomDir "gemrb"
+#	mkRomDir "gemrb"
 	mkRomDir "gemrb/baldurs1"
 	mkRomDir "gemrb/baldurs2"
 	mkRomDir "gemrb/icewind1"
@@ -87,11 +87,12 @@ _EOF_
 	mkRomDir "$gemrb/cache"
 	mkUserDir "$configdir/gemrb"
 
-	#create Baldurs Gate 1 configuration
+	cp $md_inst/etc/gemrb/GemRB.cfg.sample $configdir/gemrb
+#create Baldurs Gate 1 configuration
 	
-		#better to use iniConfig iniSet ????
-		#iniConfig "=" "" "$configdir/gemrb/bg1.cfg"
-		#iniSet "x" "y"
+	#better to use iniConfig iniSet ????
+	#iniConfig "=" "" "$configdir/gemrb/bg1.cfg"
+	#iniSet "x" "y"
 	
     cat > "$configdir/gemrb/bg1.cfg" << _EOF_
 GameType=bg1
@@ -102,11 +103,6 @@ Bpp=32
 Fullscreen=0
 TooltipDelay=500
 AudioDriver = openal
-VolumeAmbients = 100
-VolumeMovie = 100
-VolumeMusic = 100
-VolumeSFX = 100
-VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
@@ -115,7 +111,7 @@ CD1=/home/pi/retropie/roms/gemrb/baldurs1/
 CachePath=/home/pi/retropie/roms/gemrb/cache/
 _EOF_
 
-	#create BG2 configuration (from planescape info)
+#create BG2 configuration (from planescape info)
    cat > "$configdir/gemrb/bg2.cfg" << _EOF_
 GameType=bg2
 GameName=Baldur's Gate 2
@@ -125,11 +121,6 @@ Bpp=32
 Fullscreen=0
 TooltipDelay=500
 AudioDriver = openal
-VolumeAmbients = 100
-VolumeMovie = 100
-VolumeMusic = 100
-VolumeSFX = 100
-VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
@@ -148,11 +139,6 @@ Bpp=32
 Fullscreen=0
 TooltipDelay=500
 AudioDriver = openal
-VolumeAmbients = 100
-VolumeMovie = 100
-VolumeMusic = 100
-VolumeSFX = 100
-VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
@@ -174,14 +160,8 @@ Bpp=32
 Fullscreen=0
 TooltipDelay=500
 AudioDriver = openal
-VolumeAmbients = 100
-VolumeMovie = 100
-VolumeMusic = 100
-VolumeSFX = 100
-VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
-#FogOfWar=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/icewind2/
 CD1=/home/pi/retropie/roms/gemrb/icewind2/data/
@@ -198,14 +178,8 @@ Bpp=32
 Fullscreen=0
 TooltipDelay=500
 AudioDriver = openal
-VolumeAmbients = 100
-VolumeMovie = 100
-VolumeMusic = 100
-VolumeSFX = 100
-VolumeVoices = 100
 GUIEnhancements = 15
 DrawFPS=1
-#FogOfWar=1
 CaseSensitive=1
 GamePath=/home/pi/retropie/roms/gemrb/planescape/
 CD1=/home/pi/retropie/roms/gemrb/planescape/data/
