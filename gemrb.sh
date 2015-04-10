@@ -101,9 +101,9 @@ AudioDriver = openal
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/baldurs1/
-CD1=/home/pi/retropie/roms/gemrb/baldurs1/
-CachePath=/home/pi/retropie/roms/gemrb/cache/
+GamePath=/home/pi/RetroPie/roms/gemrb/baldurs1/
+CD1=/home/pi/RetroPie/roms/gemrb/baldurs1/
+CachePath=/home/pi/RetroPie/roms/gemrb/cache/
 _EOF_
 
 #create Baldurs Gate 2 configuration
@@ -119,9 +119,9 @@ AudioDriver = openal
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/baldurs2/
-CD1=/home/pi/retropie/roms/gemrb/baldurs2/data/
-CachePath=/home/pi/retropie/roms/gemrb/cache/
+GamePath=/home/pi/RetroPie/roms/gemrb/baldurs2/
+CD1=/home/pi/RetroPie/roms/gemrb/baldurs2/data/
+CachePath=/home/pi/RetroPie/roms/gemrb/cache/
 _EOF_
 
 #create Icewind 1 configuration
@@ -137,11 +137,11 @@ AudioDriver = openal
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/icewind1/
-CD1=/home/pi/retropie/roms/gemrb/icewind1/Data/
-CD2=/home/pi/retropie/roms/gemrb/icewind1/CD2/Data/
-CD3=/home/pi/retropie/roms/gemrb/icewind1/CD3/Data/
-CachePath=/home/pi/retropie/roms/gemrb/cache/
+GamePath=/home/pi/RetroPie/roms/gemrb/icewind1/
+CD1=/home/pi/RetroPie/roms/gemrb/icewind1/Data/
+CD2=/home/pi/RetroPie/roms/gemrb/icewind1/CD2/Data/
+CD3=/home/pi/RetroPie/roms/gemrb/icewind1/CD3/Data/
+CachePath=/home/pi/RetroPie/roms/gemrb/cache/
 _EOF_
 
 #create Icewind2 configuration
@@ -157,9 +157,9 @@ AudioDriver = openal
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/icewind2/
-CD1=/home/pi/retropie/roms/gemrb/icewind2/data/
-CachePath=/home/pi/retropie/roms/gemrb/cache/
+GamePath=/home/pi/RetroPie/roms/gemrb/icewind2/
+CD1=/home/pi/RetroPie/roms/gemrb/icewind2/data/
+CachePath=/home/pi/RetroPie/roms/gemrb/cache/
 _EOF_
 
 #create Planescape configuration
@@ -175,9 +175,15 @@ AudioDriver = openal
 GUIEnhancements = 15
 DrawFPS=1
 CaseSensitive=1
-GamePath=/home/pi/retropie/roms/gemrb/planescape/
-CD1=/home/pi/retropie/roms/gemrb/planescape/data/
-CachePath=/home/pi/retropie/roms/gemrb/cache/
+GamePath=/home/pi/RetroPie/roms/gemrb/planescape/
+CD1=/home/pi/RetroPie/roms/gemrb/planescape/data/
+CachePath=/home/pi/RetroPie/roms/gemrb/cache/
 _EOF_
+
+	chown $user:$user "$configdir/gemrb/bg1.cfg"
+	chown $user:$user "$configdir/gemrb/bg2.cfg"
+	chown $user:$user "$configdir/gemrb/iwd1.cfg"
+	chown $user:$user "$configdir/gemrb/iwd2.cfg"
+	chown $user:$user "$configdir/gemrb/pst.cfg"
 	
 }	
