@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# This file is part of RetroPie.
-# 
+# This script is for use with RetroPie.  It is not endorsed or supported by the RetroPie project.
+# RetroPie copyright information follows.
 # (c) Copyright 2012-2015  Florian Müller (contact@petrockblock.com)
 # 
 # See the LICENSE.md file at the top-level directory of this distribution and 
