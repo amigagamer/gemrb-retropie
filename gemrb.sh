@@ -91,7 +91,7 @@ _EOF_
 #create Baldurs Gate 1 configuration	
     cat > "$configdir/gemrb/bg1.cfg" << _EOF_
 GameType=bg1
-GameName=Baldur's Gate 1
+GameName=Baldurs Gate 1
 Width=640
 Height=480
 Bpp=32
@@ -109,7 +109,7 @@ _EOF_
 #create Baldurs Gate 2 configuration
    cat > "$configdir/gemrb/bg2.cfg" << _EOF_
 GameType=bg2
-GameName=Baldur's Gate 2
+GameName=Baldurs Gate 2
 Width=640
 Height=480
 Bpp=32
