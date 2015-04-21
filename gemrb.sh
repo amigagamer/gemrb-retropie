@@ -24,7 +24,7 @@ function build_gemrb() {
 	mkdir build
     pushd build
     cmake .. -DPREFIX="$md_inst" -DCMAKE_BUILD_TYPE=Release -DFREETYPE_INCLUDE_DIRS=/usr/include/freetype2/
-    make -j 4
+    make -j 4 VERBOSE=111
     popd
 }
 
